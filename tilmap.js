@@ -331,7 +331,8 @@ tilmap.calcTILfun=function(){
         tilmap.imgDataR=tilmap.imSlice(0)
         tilmap.imgDataG=tilmap.imSlice(1)
         tilmap.imgDataB=tilmap.imSlice(2)
-        tilmap.imgDataB_count=tilmap.imgDataB.map(x=>x.map(x=>x/255)).map(x=>x.reduce((a,b)=>a+b)).reduce((a,b)=>a+b)
+        //tilmap.imgDataB_count=tilmap.imgDataB.map(x=>x.map(x=>x/255)).map(x=>x.reduce((a,b)=>a+b)).reduce((a,b)=>a+b)
+        tilmap.imgDataB_count=tilmap.imgDataB.map(x=>x.map(x=>(x>0))).map(x=>x.reduce((a,b)=>a+b)).reduce((a,b)=>a+b)
         calcTILred.onclick=function(){tilmap.from2D(tilmap.imSlice(0))}
         calcTILgreen.onclick=function(){tilmap.from2D(tilmap.imSlice(1))}
         //calcTILblue.onclick=function(){tilmap.from2D(tilmap.imSlice(2))}
