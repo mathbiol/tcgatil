@@ -245,7 +245,7 @@ tilmap.calcTILfun=function(){
         h += '<br>&nbsp;&nbsp;&nbsp;<span style="font-size:small"> 0 &#8592(segmentation threshold)&#8594 1</span>'
         h += '<br> <input id="transparencyRange" type="range" style="width:200px" value='+tilmap.parms.transparency+'>'
         h += '<br><span style="font-size:small">&nbsp; 0 &#8592 (segmentation transparency) &#8594 1<s/pan></p>'
-    h += '<hr> <select><option>add more classifications</option><option>(under development)</option></select>'
+    h += '<hr> <select><option>add more classifications</option><option>(under development)</option></select> <button id="alignCanvas">Align</button>'
     h += '</span>'
     tilmap.calcTILdiv.innerHTML=h
     hideRGBbuttons.onclick=function(){
@@ -273,6 +273,9 @@ tilmap.calcTILfun=function(){
         }
         tilmap.canvasAlign()
         
+    }
+    alignCanvas.onclick=function(){
+        tilmap.canvasAlign()
     }
     tilmap.zoom2loc()
     cancerRange.value=tilmap.parms.cancerRange
