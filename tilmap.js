@@ -441,7 +441,10 @@ tilmap.calcTILfun=function(){
         }
 
         //cancerRange.onchange()
-        calcTILblue.click() // <-- classify first
+        if(!document.getElementById('cvTop')){
+            calcTILblue.click() // <-- classify first
+        }
+        
         
         tilmap.cvTop=document.createElement('canvas')
         tilmap.cvTop.width=tilmap.img.width
