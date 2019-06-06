@@ -300,7 +300,7 @@ tilmap.calcTILfun=function(){
             advancedRanges.hidden=false
             hideRanges.textContent='Advanced[-] '
             hideRanges.style.color="maroon"
-            cancerRange.click()      
+            setTimeout(cancerRange.onclick,0)
         }else{
             advancedRanges.hidden=true
             hideRanges.textContent='Advanced[+] '
