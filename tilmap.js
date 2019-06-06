@@ -59,7 +59,7 @@ tilmap.ui=function(div){
 
         //debugger
     }
-    setTimeout(tilmap.showTIL,1000)
+    setTimeout(tilmap.showTIL,3000)
     searchInput.onkeyup=searchInput.onclick=tilmap.search
     if(location.hash.length>3){
         var ts = location.hash.slice(1).split('/')
