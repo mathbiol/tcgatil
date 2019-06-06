@@ -159,8 +159,9 @@ tilmap.showTIL=function(){ // get image and display it
     var url='PNGs/'+tilmap.selTumorType.value+'/'+tilmap.selTumorTissue.value
     var h='<div><img id="imgTIL" src='+url+'></div><div><a href="'+url+'" target="_blank">'+url+'</a></div>'
 
-    var h = '<div id="imgTILDiv"><img id="imgTIL" src='+url+'></div><a href="'+url+'" target="_blank" style="font-size:small">'+url+'</a></div><div id="calcTIL">...</div>'
+    var h = '<div id="imgTILDiv"><img id="imgTIL" src="'+url+'"></div><a href="'+url+'" target="_blank" style="font-size:small">'+url+'</a></div><div id="calcTIL">...</div>'
     tilmap.tilShowImgDiv.innerHTML=h
+    
     tilmap.tilShowImgDiv.style.color='navy'
     var dt=tilmap.tumorIndex[tilmap.selTumorType.value][tilmap.selTumorTissue.value]
 
@@ -232,7 +233,7 @@ tilmap.calcTILfun=function(){
             //h += '<span> <button id="calcTILclass" style="background-color:silver"> Classification </button></span> '
             h += '<button id="calcTIL0" style="background-color:white"> original png </button> <span id="tileSize" style="font-size:small"></span>'
         h += '</span> '
-    h += '<button id="calcTILblue" style="background-color:silver;color:blue"> Classification </button>'
+    h += '<button id="calcTILblue" style="background-color:silver;color:blue"> Classification </button><span style="font-size:small;background-color:gray;color:white">&nbsp;T&nbsp;</span><span style="font-size:small;background-color:yellow;color:black">&nbsp;C&nbsp;</span><span style="font-size:small;background-color:red;color:black">&nbsp;T&nbsp;</span>'
     h += '</p>'
     h += '<span id="hideRanges" style="color:blue;cursor:hand;font-size:small">Advanced[+] </span>'
     
@@ -563,3 +564,5 @@ tilmap.getSlideData = async function (slide) {
 // wiring links teh the header to where the application is
 ioUrl.href=location.href
 codeSource.href='https://github.com/mathbiol'+location.pathname
+
+ 

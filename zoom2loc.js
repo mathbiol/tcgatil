@@ -99,7 +99,7 @@ zoom2loc = function (event) {
         if (obfuscatedId) {
             ifrm.src = `/viewer.html?slideId=${result[0]['_id']['$oid']}&states=${encodedData}`;
         } else {
-            ifrm.src = `${newIfrmLoc}&x=${Math.ceil(clickPos.x * scale.w)}&y=${Math.ceil(clickPos.y * scale.h)}&zoom=5`;
+            ifrm.src = `${newIfrmLoc}&x=${Math.ceil(clickPos.x * scale.w)}&y=${Math.ceil(clickPos.y * scale.h)}&zoom=8`;
         }
         console.log('ifrm.src:', ifrm.src);
 
