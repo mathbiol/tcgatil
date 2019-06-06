@@ -33,7 +33,7 @@ tilmap=function(){
     }
 }
 
-tilmap.parms={
+tilmap.parms={ // starting defaults
     cancerRange:100,
     tilRange:100,
     transparency:20,
