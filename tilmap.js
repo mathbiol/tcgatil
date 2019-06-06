@@ -12,6 +12,20 @@ tilmap=function(){
                 setTimeout(firstLoad,1000)
             }else{
                 tilmap.img.onload()
+                if(location.hash.length>3){
+                    var ts = location.hash.slice(1).split('/')
+                    setTimeout(function(){
+                        tilmap.selTumorType.value=ts[0]
+                        tilmap.selTumorType.onchange()
+                        setTimeout(function(){
+                            tilmap.selTumorTissue.value=ts[1]
+                            tilmap.selTumorTissue.onchange()
+                        },1000)
+
+                        //debugger
+                    },0)
+                    //debugger
+                }
             }
         }
         firstLoad()
@@ -73,7 +87,7 @@ tilmap.ui=function(div){
         //debugger
     }
     /*
-    setTimeout(tilmap.showTIL,3000)
+    //setTimeout(tilmap.showTIL,3000)
     searchInput.onkeyup=searchInput.onclick=tilmap.search
     if(location.hash.length>3){
         var ts = location.hash.slice(1).split('/')
@@ -453,7 +467,10 @@ tilmap.calcTILfun=function(){
         tilmap.img.parentElement.appendChild(tilmap.cvTop)
         tilmap.cvTop.style.position='absolute'
         tilmap.canvasAlign()
-        tilmap.segment()
+        if(document.querySelectorAll('#cvBase').length<2){
+            tilmap.segment()
+        }
+        
     }
     segmentationRange.onchange=tilmap.segment //rangeSegmentBt.onclick
     transparencyRange.onchange=tilmap.transpire
