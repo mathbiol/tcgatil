@@ -3,7 +3,20 @@ console.log('tilmap.js loaded')
 tilmap=function(){
     // ini
     tilmap.div=document.body.querySelector('#tilmapDiv')
-    if(tilmap.div){tilmap.ui()}
+    if(tilmap.div){
+        tilmap.ui()
+        // make sure first image is onloaded
+        function firstLoad(){
+            if(!document.getElementById('calcTILblue')){
+                console.log('1st Load at '+Date())
+                setTimeout(firstLoad,1000)
+            }else{
+                tilmap.img.onload()
+            }
+        }
+        firstLoad()
+        //debugger
+    }
 }
 
 tilmap.parms={
@@ -59,6 +72,7 @@ tilmap.ui=function(div){
 
         //debugger
     }
+    /*
     setTimeout(tilmap.showTIL,3000)
     searchInput.onkeyup=searchInput.onclick=tilmap.search
     if(location.hash.length>3){
@@ -75,10 +89,12 @@ tilmap.ui=function(div){
         },1000)
         //debugger
     }
+    */
     slideLink.onclick=function(){
         location.hash=`${location.hash=tilmap.selTumorType.value}/${tilmap.selTumorTissue.value}`
         tilmap.copyToClipboard(location.href)
     }
+
 
 }
 
@@ -200,6 +216,10 @@ tilmap.showTIL=function(){ // get image and display it
         s.onload=tilmap.calcTILfun
         document.head.appendChild(s)
     }
+    //if(document.getElementById('calcTILblue')){
+    //    calcTILblue.click()
+    //}
+    
 }
 
 tilmap.zoom2loc=function(){ // event listener pointing to zoom2loc's code
@@ -420,9 +440,9 @@ tilmap.calcTILfun=function(){
             tilRange.onchange()
         }
 
-        cancerRange.onchange()
-        //setTimeout(function(){cancerTilRange.onchange()},1000)
-        //cancerTilRange.onchange() // <-- start with the 50% mix
+        //cancerRange.onchange()
+        calcTILblue.click() // <-- classify first
+        
         tilmap.cvTop=document.createElement('canvas')
         tilmap.cvTop.width=tilmap.img.width
         tilmap.cvTop.height=tilmap.img.height
