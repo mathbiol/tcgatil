@@ -256,24 +256,24 @@ tilmap.zoom2loc=function(){ // event listener pointing to zoom2loc's code
 
 tilmap.calcTILfun=function(){
     //var h=' Decode RGB maps:'
-    var h=''
+    var h='' 
     //h += '<p><span id="hideRGBbuttons" style="color:blue;cursor:hand;font-size:small">RGB[+] </span>'
     h += '<p> '
     h += '<span id="hideRGBbuttons" style="color:blue;cursor:hand;font-size:small">RGB[+] </span>'
         h += '<span id="rgbButtons" hidden=true>'
-            h += '<button id="calcTILred" style="background-color:silver"> TIL prob. </button> '
+            h += '<button id="calcTILred" style="background-color:silver"> Lymph prob. </button> '
             h += '<span> <button id="calcTILgreen" style="background-color:silver"> Cancer prob. </button></span> '
             //h += '<span> </span> '
             //h += '<span> <button id="calcTILclass" style="background-color:silver"> Classification </button></span> '
             h += '<button id="calcTIL0" style="background-color:white"> original png </button> <span id="tileSize" style="font-size:small"></span>'
         h += '</span> '
-    h += '<button id="calcTILblue" style="background-color:silver;color:blue"> Classification </button><span style="font-size:small;background-color:gray;color:white">&nbsp;T&nbsp;</span><span style="font-size:small;background-color:yellow;color:black">&nbsp;C&nbsp;</span><span style="font-size:small;background-color:red;color:black">&nbsp;T&nbsp;</span>'
+    h += '<button id="calcTILblue" style="background-color:silver;color:black;font-weight:bold"> Classification </button>&nbsp;<span style="font-size:small;background-color:gray;color:white">&nbsp;T&nbsp;</span><span style="font-size:small;background-color:yellow;color:black">&nbsp;C&nbsp;</span><span style="font-size:small;background-color:red;color:black">&nbsp;L&nbsp;</span>'
     h += '</p>'
     h += '<span id="hideRanges" style="color:blue;cursor:hand;font-size:small">Advanced[+] </span>'
     
     h += '<span id="advancedRanges" hidden=false>'
         h += '<p><span><input id="cancerRange" type="range" style="width:200px"> <button id="cancerRangePlay" style="background-color:lime">Cancer</button> <span id="cancerTiles"> counting ...</span></span>'
-        h += '<br><input id="tilRange" type="range" style="width:200px"> <button id="tilRangePlay" style="background-color:lime">TIL</button>  <span id="tilTiles">counting ...</span></p>'
+        h += '<br><input id="tilRange" type="range" style="width:200px"> <button id="tilRangePlay" style="background-color:lime">Lymph</button>  <span id="tilTiles">counting ...</span></p>'
         h += '<span style="font-size:small;color:gray">... additional classifications will be available here ...</span>'
         // h += '<br>Cancer  &#8592 (prediction) &#8594 TIL</p>'
         h += '<p> <input id="segmentationRange" type="range" style="width:200px" value='+tilmap.parms.threshold+'> <button id="rangeSegmentBt" style="background-color:lime">Backroung suppression</button> <span id="backTiles">...</span>'
@@ -460,6 +460,11 @@ tilmap.calcTILfun=function(){
         }
         
         
+        //if(document.querySelectorAll('#cvTop').length==0){
+        //    tilmap.cvTop=document.createElement('canvas')
+        //}else{
+        //    tilmap.cvTop=document.getElementById('cvTop')
+        //} 
         tilmap.cvTop=document.createElement('canvas')
         tilmap.cvTop.width=tilmap.img.width
         tilmap.cvTop.height=tilmap.img.height
@@ -470,6 +475,7 @@ tilmap.calcTILfun=function(){
         if(document.querySelectorAll('#cvBase').length<2){
             tilmap.segment()
         }
+        console.log('cvTops',document.querySelectorAll('#cvTop').length)
         
     }
     segmentationRange.onchange=tilmap.segment //rangeSegmentBt.onclick
