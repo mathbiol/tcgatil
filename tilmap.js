@@ -300,7 +300,25 @@ tilmap.calcTILfun=function(){
             advancedRanges.hidden=false
             hideRanges.textContent='Advanced[-] '
             hideRanges.style.color="maroon"
-            setTimeout(cancerRange.onclick,0)
+            //setTimeout(cancerRange.onclick,0)
+            if(!tilmap.demoPlayed){
+                tilmap.demoPlayed=true
+                setTimeout(_=>{
+                    rangeSegmentBt.style.backgroundColor='cyan'
+                    setTimeout(_=>{
+                        rangeSegmentBt.click()
+                        setTimeout(_=>{
+                            rangeSegmentBt.style.backgroundColor='lime'
+                            calcTILblue.style.backgroundColor='cyan'
+                            setTimeout(_=>{
+                                calcTILblue.click()
+                                calcTILblue.style.backgroundColor='silver'
+                            },500)
+                        },2000)
+                    },500)
+                    
+                },1000)
+            }
         }else{
             advancedRanges.hidden=true
             hideRanges.textContent='Advanced[+] '
@@ -476,7 +494,7 @@ tilmap.calcTILfun=function(){
             tilmap.segment()
         }
         console.log('cvTops',document.querySelectorAll('#cvTop').length)
-        
+        loading.hidden=true
     }
     segmentationRange.onchange=tilmap.segment //rangeSegmentBt.onclick
     transparencyRange.onchange=tilmap.transpire
