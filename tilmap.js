@@ -43,6 +43,7 @@ tilmap.parms={ // starting defaults
 tilmap.ui=function(div){
     div=div||tilmap.div // default div
     h='<table><tr><td style="vertical-align:top"><h3 style="color:maroon">Til Maps <span id="slideLink" style="color:blue;font-size:small;cursor:pointer">Link</span></h3>'
+    h+='<p>The interactive panel on the left is a synthetic image assembled with the deeplearned classifications of individual patches from the full image, on the right. The YouTube link above demonstrates the interactive operation.</p>'
     h+='<br><input id="searchInput" value="search" style="color:gray"> <span id="searchResults" style="font-size:small">...</span>'
     h+='<br>from tumor type <select id="selTumorType"></select> select tissue <select id="selTumorTissue"></select>'
     /*
