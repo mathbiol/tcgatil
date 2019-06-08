@@ -109,6 +109,19 @@ tilmap.ui=function(div){
         tilmap.copyToClipboard(location.href)
     }
 
+    var n=0
+    var t = setInterval(_=>{
+        n=n+1 
+        //console.log('initial check '+n)
+        if((document.querySelectorAll('#cvTop').length>1)&(document.querySelectorAll('#cvBase').length>1)){
+            selTumorTissue.onchange()
+            //document.querySelectorAll('#cvTop')[1].remove()
+            //document.querySelectorAll('#cvBase')[1].remove()
+            //tilmap.canvasAlign()
+        }
+        if(n>30){clearInterval(t)}
+    },1000)
+
 
 }
 
@@ -277,12 +290,14 @@ tilmap.calcTILfun=function(){
         h += '<span style="font-size:small;color:gray">... additional classifications will be available here ...</span>'
         // h += '<br>Cancer  &#8592 (prediction) &#8594 TIL</p>'
         h += '<p> <input id="segmentationRange" type="range" style="width:200px" value='+tilmap.parms.threshold+'> <button id="rangeSegmentBt" style="background-color:lime">Backroung suppression</button> <span id="backTiles">...</span>'
-        h += '<br>&nbsp;&nbsp;&nbsp;<span style="font-size:small"> 0 &#8592(segmentation threshold)&#8594 1</span>'
+        h += '<br>&nbsp;&nbsp;&nbsp;<span style="font-size:small"> 0 &#8592(segmentation threshold)&#8594 1</span> <span style="font-size:small;color:gray">[<span id="segVal"></span>%]</span>'
         h += '<br> <input id="transparencyRange" type="range" style="width:200px" value='+tilmap.parms.transparency+'>'
-        h += '<br><span style="font-size:small">&nbsp; 0 &#8592 (segmentation transparency) &#8594 1<s/pan></p>'
+        h += '<br><span style="font-size:small">&nbsp; 0 &#8592 (segmentation transparency) &#8594 1</span> <span style="font-size:small;color:gray">[<span id="transVal"></span>%]</span></p>'
     h += '<hr> <select><option>add more classifications</option><option>(under development)</option></select> <button id="alignCanvas">Align</button>'
     h += '</span>'
     tilmap.calcTILdiv.innerHTML=h
+    segVal.innerText=segmentationRange.value
+    transVal.innerText=transparencyRange.value
     hideRGBbuttons.onclick=function(){
         if(rgbButtons.hidden){
             rgbButtons.hidden=false
@@ -533,6 +548,7 @@ tilmap.imSlice=function(i){ // slice ith layer of imgData matrix
 }
 
 tilmap.segment=function(){
+    segVal.innerText=segmentationRange.value
     // generate mask
     //var k = parseInt(cancerRange.value)/100 // range value
     var cr=parseInt(cancerRange.value)/100
@@ -582,6 +598,7 @@ tilmap.segment=function(){
 }
 
 tilmap.transpire=function(){
+    transVal.innerText=transparencyRange.value
     var tp = Math.round(2.55*parseInt(transparencyRange.value)) // range value
     //var clrEdge = [255,255,0,255-tp] // yellow
     var clrEdge = [255,0,144,255-tp] // magenta
@@ -629,4 +646,20 @@ tilmap.getSlideData = async function (slide) {
 ioUrl.href=location.href
 codeSource.href='https://github.com/mathbiol'+location.pathname
 
- 
+// prevent initial canvas duplication
+/*
+(function(){
+    var n=0
+    var t = setInterval(_=>{
+        n=n+1
+        console.log('initial check '+n)
+        if((document.querySelectorAll('#cvTop').length>1)&(document.querySelectorAll('#cvBase').length>1)){
+            document.querySelectorAll('#cvTop')[0].remove()
+            document.querySelectorAll('#cvBase')[0].remove()
+            tilmap.canvasAlign()
+        }
+        if(n>30){clearInterval(t)}
+    },1000)
+})()
+
+*/
