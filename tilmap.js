@@ -3,7 +3,9 @@ console.log('tilmap.js loaded')
 tilmap=function(){
     // ini
     tilmap.div=document.body.querySelector('#tilmapDiv')
+    tilmap.div.hidden=true
     if(tilmap.div){
+        tilmap.homeUI()
         tilmap.ui()
         // make sure first image is onloaded
         function firstLoad(){
@@ -511,6 +513,8 @@ tilmap.calcTILfun=function(){
         }
         console.log('cvTops',document.querySelectorAll('#cvTop').length)
         loading.hidden=true
+        continueTool.style.backgroundColor="yellow"
+        continueTool.style.color="red"
     }
     segmentationRange.onchange=tilmap.segment //rangeSegmentBt.onclick
     transparencyRange.onchange=tilmap.transpire
@@ -624,6 +628,31 @@ tilmap.canvasAlign=function(){
     tilmap.cvTop.style.left=tilmap.cvBase.getBoundingClientRect().left
     // correction if needed
     tilmap.cvTop.style.top=parseFloat(tilmap.cvTop.style.top)+tilmap.cvBase.getBoundingClientRect().top-tilmap.cvTop.getBoundingClientRect().top
+}
+
+tilmap.homeUI=function(){
+    var h = '<h3 style="color:maroon"> Tumor Infitrating Lynphocytes (TILs)</h3>'
+    h += '<p style="color:navy">'
+    h += 'Tumor formation requires evading the surveillance of the patient\'s own immune system.'
+    h += ' As such, the visualization of the immune response mediated by Lymphocytes has an important prognostic value for the understanding and treatment of cancer.'
+    h += ' To that end, large collaboratory initiatives like <a href="https://www.tilsinbreastcancer.org" style="background-color:yellow" target="_blank">tilsinbreastcancer.org</a> bring together distributed efforts to analyse and classify histopathology slides, each with up to a million individual cells.'
+    h += '</p>'
+    h += '<h3 style="color:maroon"> Deep Learning (AI)</h3>'
+    h += '<p style="color:navy">'
+    h += '<i>Deep Learning</i>, an Artificial Intelligence (AI) technique, was used here to scale and automate the laborious TIL and cancer cell classification by Pathologists.'
+    h += ' This web-based tool provides an interface with tissue images synthesized from the AI predictions, which can be interactivelly mapped to the raw images they classify.'
+    h += ' The result is a collection of 1015 breast cancer whole slide images and their respective synthetic AI maps.'
+    h += ' The slide images come from the public <a href="https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga" style="background-color:yellow" target="_blank">The Cancer Genome Atlas</a> (TCGA), and the AI calssification image maps are similarly made publicly available with this tool.'
+    h += ' To use the interactive tool where AI classifications are mapped to whole slides of breast tumors click <button id="continueTool" style="background-color:silver;color:gray">continue</button>.'
+    h += '</p>'
+    tilmap.homeDiv=document.getElementById('tilmapHome')
+    tilmap.homeDiv.innerHTML=h
+    tilmap.homeDiv.style.fontFamily="Courier"
+    continueTool.onclick=function(){
+        tilmap.div.hidden=false
+        tilmap.homeDiv.hidden=true
+        setTimeout(tilmap.canvasAlign,100)
+    }
 }
 
 
