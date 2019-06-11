@@ -638,7 +638,7 @@ tilmap.homeUI=function(){
     h += ' To that end, large collaboratory initiatives like <a href="https://www.tilsinbreastcancer.org" style="background-color:yellow" target="_blank">tilsinbreastcancer.org</a> bring together distributed efforts to analyse and classify histopathology slides, each with up to a million individual cells.'
     h += '</p>'
     h += '<h3 style="color:maroon"> Deep Learning (AI)</h3>'
-    h += '<p style="color:navy">'
+    h += '<p style="color:navy;font-family:Arial">'
     h += '<i>Deep Learning</i>, an Artificial Intelligence (AI) technique, was used here to scale and automate the laborious TIL and cancer cell classification by Pathologists.'
     h += ' This web-based tool provides an interface with tissue images synthesized from the AI predictions, which can be interactivelly mapped to the raw images they classify.'
     h += ' The result is a collection of 1015 breast cancer whole slide images and their respective synthetic AI maps.'
@@ -647,7 +647,7 @@ tilmap.homeUI=function(){
     h += '</p>'
     tilmap.homeDiv=document.getElementById('tilmapHome')
     tilmap.homeDiv.innerHTML=h
-    tilmap.homeDiv.style.fontFamily="Courier"
+    tilmap.homeDiv.style.fontFamily="Arial"
     continueTool.onclick=function(){
         tilmap.div.hidden=false
         tilmap.homeDiv.hidden=true
