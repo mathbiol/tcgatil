@@ -643,7 +643,7 @@ tilmap.homeUI=function(){
     h += ' This web-based tool provides an interface with tissue images synthesized from the AI predictions, which can be interactivelly mapped to the raw images they classify.'
     h += ' The result is a collection of 1015 breast cancer whole slide images and their respective synthetic AI maps.'
     h += ' The slide images come from the public <a href="https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga" style="background-color:yellow" target="_blank">The Cancer Genome Atlas</a> (TCGA), and the AI calssification image maps are similarly made publicly available with this tool.'
-    h += ' To use the interactive tool where AI classifications are mapped to whole slides of breast tumors click <button id="continueTool" style="background-color:silver;color:gray;font-size:large;vertical-align:top;border-radius:15px">continue</button>.'
+    h += ' To use the interactive tool where AI classifications are mapped to whole slides of breast tumors <button id="continueTool" style="background-color:silver;color:gray;font-size:large;vertical-align:top;border-radius:15px">Click to see TIL/tumor maps</button>'
     h += '</p>'
     tilmap.homeDiv=document.getElementById('tilmapHome')
     tilmap.homeDiv.innerHTML=h
