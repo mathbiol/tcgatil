@@ -1,2 +1,4 @@
 # TCGA TIL
-Hi Joel, Tahsin, Raj and Han, testing a new version of the TilMap UI for https://mathbiol.github.io/tcgatil here. What we learn here, I'll then move back to the reference https://mathbiol.github.io/tilmap. The old tcgatil is parked at https://mathbiol.github.io/tcgatil_old, waiting for the final decision free some space in github.
+New version of the TilMap UI for TCGA data, https://mathbiol.github.io/tcgatil, developed on the foundations of https://github.com/mathbiol/tilmap. Give it a try:
+[![](https://mathbiol.github.io/tcgatil/snap2.png)
+![](https://mathbiol.github.io/tcgatil/snap1.png)](https://mathbiol.github.io/tcgatil)
