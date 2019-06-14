@@ -645,6 +645,10 @@ tilmap.homeUI=function(){
     h += ' The slide images come from the public <a href="https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga" style="background-color:yellow" target="_blank">The Cancer Genome Atlas</a> (TCGA), and the AI calssification image maps are similarly made publicly available with this tool.'
     h += ' To use the interactive tool where AI classifications are mapped to whole slides of breast tumors <button id="continueTool" style="background-color:silver;color:gray;font-size:large;vertical-align:top;border-radius:15px">Click to see TIL/tumor maps</button>'
     h += '</p>'
+    h += '<hr>'
+    h += '<p style="font-size:small">'
+    h += 'For more information and methodological detail see manuscript preprint: <br><i>Han Le, Rajarsi Gupta, Le Hou, Shahira Abousamra, Danielle Fassler, Tahsin Kurc, Dimitris Samaras, Rebecca Batiste, Tianhao Zhao, Alison L. Van Dyke, Ashish Sharma, Erich Bremer, Jonas S Almeida, Joel Saltz (2019) <b>Utilizing Automated Breast Cancer Detection to Identify Spatial Distributions of Tumor Infiltrating Lymphocytes in Invasive Breast Cancer</b>. <a href="https://arxiv.org/abs/1905.10841">arxiv.org/abs/1905.10841</a>.'
+    h += '</p>'
     tilmap.homeDiv=document.getElementById('tilmapHome')
     tilmap.homeDiv.innerHTML=h
     tilmap.homeDiv.style.fontFamily="Arial"
