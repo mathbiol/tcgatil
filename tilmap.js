@@ -89,9 +89,10 @@ tilmap.ui=function(div){
 
         //debugger
     }
-    /*
+    
     //setTimeout(tilmap.showTIL,3000)
     searchInput.onkeyup=searchInput.onclick=tilmap.search
+    /*
     if(location.hash.length>3){
         var ts = location.hash.slice(1).split('/')
         setTimeout(function(){
@@ -107,6 +108,7 @@ tilmap.ui=function(div){
         //debugger
     }
     */
+    
     slideLink.onclick=function(){
         location.hash=`${location.hash=tilmap.selTumorType.value}/${tilmap.selTumorTissue.value}`
         tilmap.copyToClipboard(location.href)
