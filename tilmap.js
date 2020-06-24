@@ -652,7 +652,7 @@ tilmap.homeUI=function(){
     h += 'For more information and methodological detail see published manuscript:'
     h += '</p>'
     h += '<p style="font-size:small">'
-    h += '<i>Han Le, Rajarsi Gupta, Le Hou, Shahira Abousamra, Danielle Fassler, Tahsin Kurc, Dimitris Samaras, Rebecca Batiste, Tianhao Zhao, Alison L. Van Dyke, Ashish Sharma, Erich Bremer, Jonas S Almeida, Joel Saltz (2019) <b>Utilizing Automated Breast Cancer Detection to Identify Spatial Distributions of Tumor Infiltrating Lymphocytes in Invasive Breast Cancer</b>. Am J. Pathol. (20)30188-7. [<a href="https://pubmed.ncbi.nlm.nih.gov/32277893" target="_blank" style="background-color:yellow">PMID:32277893</a>].'
+    h += '<i>Han Le, Rajarsi Gupta, Le Hou, Shahira Abousamra, Danielle Fassler, Tahsin Kurc, Dimitris Samaras, Rebecca Batiste, Tianhao Zhao, Alison L. Van Dyke, Ashish Sharma, Erich Bremer, Jonas S Almeida, Joel Saltz (2020) <b>Utilizing Automated Breast Cancer Detection to Identify Spatial Distributions of Tumor Infiltrating Lymphocytes in Invasive Breast Cancer</b>. Am J. Pathol. (20)30188-7. [<a href="https://pubmed.ncbi.nlm.nih.gov/32277893" target="_blank" style="background-color:yellow">PMID:32277893</a>].'
     h += '</p>'
     tilmap.homeDiv=document.getElementById('tilmapHome')
     tilmap.homeDiv.innerHTML=h
