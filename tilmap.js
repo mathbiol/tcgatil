@@ -294,7 +294,7 @@ tilmap.calcTILfun=function(){
         h += '<br><input id="tilRange" type="range" style="width:200px"> <button id="tilRangePlay" style="background-color:lime">Lymph</button>  <span id="tilTiles">counting ...</span></p>'
         // h += '<span style="font-size:small;color:gray">... additional classifications will be available here ...</span>'
         // h += '<br>Cancer  &#8592 (prediction) &#8594 TIL</p>'
-        h += '<p> <input id="segmentationRange" type="range" style="width:200px" value='+tilmap.parms.threshold+'> <button id="rangeSegmentBt" style="background-color:lime">Backroung suppression</button> <span id="backTiles">...</span>'
+        h += '<p> <input id="segmentationRange" type="range" style="width:200px" value='+tilmap.parms.threshold+'> <button id="rangeSegmentBt" style="background-color:lime">Background suppression</button> <span id="backTiles">...</span>'
         h += '<br>&nbsp;&nbsp;&nbsp;<span style="font-size:small"> 0 &#8592(segmentation threshold)&#8594 1</span> <span style="font-size:small;color:gray">[<span id="segVal"></span>%]</span>'
         h += '<br> <input id="transparencyRange" type="range" style="width:200px" value='+tilmap.parms.transparency+'>'
         h += '<br><span style="font-size:small">&nbsp; 0 &#8592 (segmentation transparency) &#8594 1</span> <span style="font-size:small;color:gray">[<span id="transVal"></span>%]</span></p>'
